@@ -22,6 +22,5 @@ export const signup = async (req, res) => {
   const acessToken = jwt.sign({ data: createdUser }, JWT_SECRET, {
     expiresIn: "5h",
   });
-  // res.json(acessToken);
-  res.json({ token: acessToken });
+  res.json(acessToken);
 };

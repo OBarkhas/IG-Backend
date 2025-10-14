@@ -24,6 +24,5 @@ export const login = async (req, res) => {
     JWT_SECRET,
     { expiresIn: "5h" }
   );
-  // res.json(acessToken);
-  res.json({ token: acessToken });
+  res.status(200).json(acessToken);
 };
