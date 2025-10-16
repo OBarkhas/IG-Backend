@@ -6,6 +6,7 @@ import userRouter from "./router/user/user.route.js";
 import postRouter from "./router/post/post.route.js";
 import { userModel } from "./schema/user.schema.js";
 import dotenv from "dotenv";
+import commentRouter from "./router/comment/comment.route.js";
 
 dotenv.config();
 
@@ -35,6 +36,7 @@ console.log(process.env.JWT_SECRET);
 app.use("/", userRouter);
 
 app.use("/", postRouter);
+app.use("/comment", commentRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
