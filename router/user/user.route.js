@@ -5,11 +5,12 @@ import { authMiddleware } from "../../middleware/auth-middleware.js";
 import followUser from "../../controller/user/follow-user.js";
 import { getUserProfileAndPosts } from "../../controller/post/user-detail.js";
 import { getUsers } from "../../controller/user/get-users.js";
+import { editUser } from "../../controller/user/edit-user.js";
 const userRouter = express.Router();
 userRouter.post("/sign-up", signup);
 userRouter.post("/login", login);
 userRouter.post("/follow-toggle/:followedUserId", authMiddleware, followUser);
 userRouter.get("/user/:userId", authMiddleware, getUserProfileAndPosts);
 userRouter.get("/users/:searchParam", authMiddleware, getUsers);
-
+userRouter.post("/edit-user", authMiddleware, editUser);
 export default userRouter;
